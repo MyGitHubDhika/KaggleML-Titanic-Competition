@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-train_filepath = 'C:/Users/apria/gitProjects/Python/KaggleLearn/Comp_Titanic/Titanic_Dataset/train.csv'
+train_filepath = 'train.csv' # Path to the train.csv file
 train_data = pd.read_csv(train_filepath, index_col='PassengerId')
 train_data = train_data.drop('Cabin', axis=1)
 train_data = train_data.fillna(round(train_data['Age'].mean()))
@@ -16,7 +16,7 @@ from sklearn.ensemble import RandomForestClassifier
 train_model = RandomForestClassifier(random_state=1)
 train_model.fit(X, y)
 
-test_filepath = 'C:/Users/apria/gitProjects/Python/KaggleLearn/Comp_Titanic/Titanic_Dataset/test.csv'
+test_filepath = 'test.csv' # Path to the test.csv file
 test_data = pd.read_csv(test_filepath)
 test_data = test_data.drop('Cabin', axis=1)
 train_data = train_data.fillna(round(train_data['Age'].mean()))
@@ -32,4 +32,4 @@ result_dict = {
     }
 
 result_data = pd.DataFrame(result_dict)
-result_data.to_csv('C:/Users/apria/gitProjects/Python/KaggleLearn/Comp_Titanic/result.csv', index=False)
+result_data.to_csv('result.csv', index=False)
