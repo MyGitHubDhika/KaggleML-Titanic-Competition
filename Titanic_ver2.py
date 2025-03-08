@@ -1,6 +1,6 @@
 import pandas as pd
 
-filepath = 'C:/Users/apria/Project/Programming_Main/Python/TitanicML_Competition/Titanic_Dataset/adv_train.csv'
+filepath = 'C:/Users/apria/Project/Python/TitanicML_Competition/Titanic_Dataset/adv_train.csv'
 train_data = pd.read_csv(filepath)
 
 y = train_data.Survived
