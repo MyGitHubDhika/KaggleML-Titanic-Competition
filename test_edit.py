@@ -1,16 +1,16 @@
 import pandas as pd
 import numpy as np
 
-filepath = "C:/Users/apria/Project/Python/TitanicML_Competition/Titanic_Dataset/test.csv"
-data = pd.read_csv(filepath)
+filepath = "test.csv"
+test_data = pd.read_csv(filepath)
 
-data['Age'] = data['Age'].fillna(round(data['Age'].mean()))
-data['Fare'] = data['Fare'].fillna(round(data['Fare'].mean()))
+test_data['Age'] = test_data['Age'].fillna(round(test_data['Age'].mean()))
+test_data['Fare'] = test_data['Fare'].fillna(round(test_data['Fare'].mean()))
 
-data = data.drop(['Name', 'Ticket', 'Cabin'], axis=1)
+test_data = test_data.drop(['Name', 'Ticket', 'Cabin'], axis=1)
 
-data['Sex'] = np.where(data['Sex'] == 'male', 1, 0)
+test_data['Sex'] = np.where(test_data['Sex'] == 'male', 1, 0)
 
-data['Embarked'] = data['Embarked'].astype('category').cat.codes
+test_data['Embarked'] = test_data['Embarked'].astype('category').cat.codes
 
-data.to_csv('C:/Users/apria/Project/Python/TitanicML_Competition/Titanic_Dataset/adv_test.csv')
+#test_data.to_csv('adv_test.csv')

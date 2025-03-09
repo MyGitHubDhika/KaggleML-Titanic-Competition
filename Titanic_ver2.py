@@ -1,6 +1,6 @@
 import pandas as pd
 
-train_filepath = 'C:/Users/apria/Project/Python/TitanicML_Competition/Titanic_Dataset/adv_train.csv'
+train_filepath = 'adv_train.csv'
 train_data = pd.read_csv(train_filepath)
 
 train_y = train_data.Survived
@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 model = RandomForestClassifier(random_state=1)
 model.fit(train_X, train_y)
 
-test_filepath = 'C:/Users/apria/Project/Python/TitanicML_Competition/Titanic_Dataset/adv_test.csv'
+test_filepath = 'adv_test.csv'
 test_data = pd.read_csv(test_filepath)
 
 test_features = train_features
@@ -24,4 +24,4 @@ prediction = pd.DataFrame({
 	'Survived': model.predict(test_X)
 })
 
-prediction.to_csv('C:/Users/apria/Project/Python/TitanicML_Competition/Titanic_Dataset/titanic_submission.csv', index=False)
+prediction.to_csv('titanic_submission.csv', index=False)
