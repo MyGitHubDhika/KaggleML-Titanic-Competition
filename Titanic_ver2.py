@@ -13,14 +13,6 @@ from sklearn.ensemble import RandomForestClassifier
 model = RandomForestClassifier(random_state=1)
 model.fit(train_X, train_y)
 
-'''
-prediction = model.predict(train_X)
-
-from sklearn.metrics import mean_absolute_error
-
-mae = mean_absolute_error(y, prediction)
-'''
-
 test_filepath = 'C:/Users/apria/Project/Python/TitanicML_Competition/Titanic_Dataset/adv_test.csv'
 test_data = pd.read_csv(test_filepath)
 
